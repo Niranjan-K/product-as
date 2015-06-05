@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) 2009-2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -26,12 +26,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>org.wso2.appserver.javaee-runtime.nested.category.feature</artifactId>
+    <artifactId>org.wso2.appserver.webapp-hosting.nested.category.feature</artifactId>
     <packaging>pom</packaging>
-    <name>Javaee Runtime</name>
+    <name>Webapp Hosting</name>
     <url>http://wso2.org</url>
-    <description>Includes javaee runtime features.</description>
-
+    <description>Includes webapp and web services hosting features</description>
     <build>
         <plugins>
             <plugin>
@@ -46,7 +45,7 @@
                             <goal>p2-feature-gen</goal>
                         </goals>
                         <configuration>
-                            <id>org.wso2.appserver.javaee-runtime.nested.category</id>
+                            <id>org.wso2.appserver.webapp-hosting.nested.category</id>
                             <propertiesFile>../../etc/feature.properties</propertiesFile>
                             <adviceFile>
                                 <properties>
@@ -57,7 +56,26 @@
                             </adviceFile>
                             <importFeatures>
                                 <importFeatureDef>
-                                    org.wso2.carbon.javaee.tomee.server:${carbon.deployment.version}
+                                    org.wso2.carbon.as.runtimes.cxf:${carbon.deployment.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.ndatasource:${carbon.commons.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.webapp.mgt:${carbon.deployment.version}
+                                </importFeatureDef>
+
+                                <importFeatureDef>
+                                    org.wso2.carbon.repomanager.axis2:${carbon.deployment.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.application.mgt:${carbon.commons.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.application.mgt.webapp:${carbon.deployment.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.application.deployer.webapp:${carbon.deployment.version}
                                 </importFeatureDef>
                             </importFeatures>
                         </configuration>
@@ -66,5 +84,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

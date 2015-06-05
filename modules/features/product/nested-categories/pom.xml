@@ -32,18 +32,10 @@
     <url>http://wso2.org</url>
 
     <modules>
-        <module>application-mgt</module>
-        <module>application-hosting</module>
-        <module>javaee-runtime</module>
-        <module>miscellaneous</module>
-        <module>multi-tenancy</module>
-        <module>user-mgt</module>
-        <module>single-sign-on</module>
+        <module>application-runtime-environment</module>
+        <module>javaee-6-web-profile</module>
         <module>registry-repository</module>
-        <module>monitoring</module>
-        <module>tooling</module>
-        <module>styling</module>
+        <module>tenant-management</module>
+        <module>webapp-hosting</module>
     </modules>
-
-
 </project>

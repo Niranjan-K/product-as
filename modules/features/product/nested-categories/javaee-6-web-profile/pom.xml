@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) 2009-2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -26,12 +26,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>org.wso2.appserver.tooling.nested.category.feature</artifactId>
+    <artifactId>org.wso2.appserver.javaee-6-web-profile.nested.category.feature</artifactId>
     <packaging>pom</packaging>
-    <name>AppServer Tools</name>
+    <name>JaveEE 6 Web Profile</name>
     <url>http://wso2.org</url>
-    <description>Includes webapp and web services hosting features.</description>
-
+    <description>This feature contains JavaEE 6 Web Profile</description>
     <build>
         <plugins>
             <plugin>
@@ -46,7 +45,7 @@
                             <goal>p2-feature-gen</goal>
                         </goals>
                         <configuration>
-                            <id>org.wso2.appserver.tooling.nested.category</id>
+                            <id>org.wso2.appserver.javaee-6-web-profile.nested.category</id>
                             <propertiesFile>../../etc/feature.properties</propertiesFile>
                             <adviceFile>
                                 <properties>
@@ -57,10 +56,10 @@
                             </adviceFile>
                             <importFeatures>
                                 <importFeatureDef>
-                                    org.wso2.carbon.wsdl.tools:${carbon.commons.version}
+                                    org.wso2.carbon.javaee.tomee.server:${carbon.deployment.version}
                                 </importFeatureDef>
                                 <importFeatureDef>
-                                    org.wso2.carbon.tryit:${carbon.commons.version}
+                                    org.wso2.appserver.webapp-hosting.nested.category:${project.version}
                                 </importFeatureDef>
                             </importFeatures>
                         </configuration>
@@ -69,5 +68,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

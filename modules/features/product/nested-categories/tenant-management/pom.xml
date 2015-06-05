@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) 2009-2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -23,14 +23,15 @@
         <groupId>org.wso2.appserver</groupId>
         <artifactId>org.wso2.appserver.nested.categories</artifactId>
         <version>6.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>org.wso2.appserver.styling.nested.category.feature</artifactId>
+    <artifactId>org.wso2.appserver.tenant-management.nested.category.feature</artifactId>
     <packaging>pom</packaging>
-    <name>AppServer Styles</name>
+    <name>Tenant Management</name>
     <url>http://wso2.org</url>
-    <description>Includes webapp and web services hosting features.</description>
+    <description>Includes tenant management features</description>
 
     <build>
         <plugins>
@@ -46,7 +47,7 @@
                             <goal>p2-feature-gen</goal>
                         </goals>
                         <configuration>
-                            <id>org.wso2.appserver.styling.nested.category</id>
+                            <id>org.wso2.appserver.tenant-management.nested.category</id>
                             <propertiesFile>../../etc/feature.properties</propertiesFile>
                             <adviceFile>
                                 <properties>
@@ -57,7 +58,22 @@
                             </adviceFile>
                             <importFeatures>
                                 <importFeatureDef>
-                                    org.wso2.appserver.styles
+                                    org.wso2.stratos.appserver.dashboard.ui:${product.as.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.tenant.common:${carbon.multitenancy.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.tenant.deployment:${carbon.multitenancy.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.tenant.mgt.common:${carbon.commons.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.tenant.throttling.agent:${carbon.multitenancy.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.tenant.usage.agent:${carbon.multitenancy.version}
                                 </importFeatureDef>
                             </importFeatures>
                         </configuration>
@@ -66,5 +82,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

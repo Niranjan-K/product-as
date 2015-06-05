@@ -28,9 +28,9 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>org.wso2.appserver.registry-repository.nested.category.feature</artifactId>
     <packaging>pom</packaging>
-    <name>Registry/Repository</name>
+    <name>Registry / Repository</name>
     <url>http://wso2.org</url>
-    <description>Includes webapp and web services hosting features.</description>
+    <description>Includes Registry / Repository features</description>
 
     <build>
         <plugins>
@@ -57,16 +57,16 @@
                             </adviceFile>
                             <importFeatures>
                                 <importFeatureDef>
-                                    org.wso2.carbon.registry.core:${carbon.registry.version}
+                                    org.wso2.carbon.registry.contentsearch:${carbon.registry.version}
                                 </importFeatureDef>
                                 <importFeatureDef>
-                                    org.wso2.carbon.registry.ui.menu:${carbon.registry.version}
+                                    org.wso2.carbon.registry.core:${carbon.registry.version}
                                 </importFeatureDef>
                                 <importFeatureDef>
                                     org.wso2.carbon.registry.resource.properties:${carbon.registry.version}
                                 </importFeatureDef>
                                 <importFeatureDef>
-                                    org.wso2.carbon.registry.contentsearch:${carbon.registry.version}
+                                    org.wso2.carbon.registry.ui.menu:${carbon.registry.version}
                                 </importFeatureDef>
                             </importFeatures>
                         </configuration>
@@ -75,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
